@@ -5,6 +5,7 @@ import numpy as np
 
 from config import config
 from backbone.resnet50 import ResNet50
+from backbone.resnet152 import ResNet152
 from backbone.fpn import FPN
 from module.rpn import RPN
 from layers.pooler import roi_pooler
@@ -13,11 +14,12 @@ from det_oprs.fpn_roi_target import fpn_roi_target
 from det_oprs.loss_opr import emd_loss_softmax
 from det_oprs.utils import get_padded_tensor
 
+
 class Network(nn.Module):
     def __init__(self):
         super().__init__()
-        self.resnet50 = ResNet50(config.backbone_freeze_at, False)
-        self.FPN = FPN(self.resnet50, 2, 6)
+        self.resnet152 = ResNet152()
+        self.FPN = FPN(self.resnet152, 2, 6)
         self.RPN = RPN(config.rpn_channel)
         self.RCNN = RCNN()
         assert config.num_classes == 2, 'Only support two class(1fg/1bg).'

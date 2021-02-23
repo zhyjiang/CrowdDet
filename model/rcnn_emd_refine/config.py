@@ -14,10 +14,10 @@ add_path(os.path.join(root_dir, 'lib'))
 class Crowd_human:
     class_names = ['background', 'person']
     num_classes = len(class_names)
-    root_folder = '/data/CrowdHuman'
-    image_folder = '/data/CrowdHuman/images'
-    train_source = os.path.join('/data/CrowdHuman/annotation_train.odgt')
-    eval_source = os.path.join('/data/CrowdHuman/annotation_val.odgt')
+    root_folder = '/home/zhongyu/data/hie2mmdet'
+    image_folder = '/home/zhongyu/data/hie2mmdet/HIE20/images'
+    train_source = os.path.join('/home/zhongyu/data/hie2mmdet/output_train.odgt')
+    eval_source = os.path.join('/home/zhongyu/data/hie2mmdet/output_val.odgt')
 
 class Config:
     output_dir = 'outputs'
@@ -46,7 +46,7 @@ class Config:
     backbone_freeze_at = 2
     rpn_channel = 256
     
-    train_batch_per_gpu = 2
+    train_batch_per_gpu = 1
     momentum = 0.9
     weight_decay = 1e-4
     base_lr = 1e-3 * 1.25

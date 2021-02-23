@@ -79,10 +79,6 @@ def train_worker(rank, train_config, network, config):
     # initialize model
     net = network()
     # load pretrain model
-    backbone_dict = torch.load(train_config.init_weights)
-    del backbone_dict['state_dict']['fc.weight']
-    del backbone_dict['state_dict']['fc.bias']
-    net.resnet50.load_state_dict(backbone_dict['state_dict'])
     net.cuda(rank)
     begin_epoch = 1
     # build optimizer
