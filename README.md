@@ -1,5 +1,11 @@
 # Detection in Crowded Scenes: One Proposal, Multiple Predictions
 
+# Convert HIE20 Data to Crowd Person Format
+
+You can use the script `hie2crowddet.py` to replace the original `hie2mmdet.py`. 
+
+# Previous Readme
+
 This is the pytorch implementation of our paper "[Detection in Crowded Scenes: One Proposal, Multiple Predictions](https://openaccess.thecvf.com/content_CVPR_2020/html/Chu_Detection_in_Crowded_Scenes_One_Proposal_Multiple_Predictions_CVPR_2020_paper.html)", https://arxiv.org/abs/2003.09163, published in CVPR 2020.
 
 Our method aiming at detecting highly-overlapped instances in crowded scenes. 
