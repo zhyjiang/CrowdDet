@@ -12,6 +12,8 @@ class ResNet152(nn.Module):
         self.resnet152.avgpool = None
         for param in self.resnet152.parameters():
             param.requires_grad = True
+        for p in self.resnet152.layer1.parameters():
+            p.requires_grad = False
 
     def forward(self, x):
         outputs = []

@@ -8,6 +8,7 @@ def load_img(image_path):
     return img
 
 def load_json_lines(fpath):
+    print(fpath)
     assert os.path.exists(fpath)
     with open(fpath,'r') as fid:
         lines = fid.readlines()

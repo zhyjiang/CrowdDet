@@ -19,6 +19,7 @@ class Network(nn.Module):
     def __init__(self):
         super().__init__()
         self.resnet152 = ResNet152()
+        # self.resnet50 = ResNet50(config.backbone_freeze_at, False)
         self.FPN = FPN(self.resnet152, 2, 6)
         self.RPN = RPN(config.rpn_channel)
         self.RCNN = RCNN()
