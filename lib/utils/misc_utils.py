@@ -1,10 +1,11 @@
 import os
 import json
 import numpy as np
+import matplotlib.pyplot as plt
 
 def load_img(image_path):
     import cv2
-    img = cv2.imread(image_path, cv2.IMREAD_COLOR)
+    img = plt.imread(image_path)
     return img
 
 def load_json_lines(fpath):
