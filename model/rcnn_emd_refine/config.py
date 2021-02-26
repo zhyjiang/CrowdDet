@@ -23,11 +23,11 @@ class Config:
     output_dir = 'outputs'
     model_dir = os.path.join(output_dir, 'model_dump')
     eval_dir = os.path.join(output_dir, 'eval_dump')
-    init_weights = '/data/model/resnet50_fbaug.pth'
+    init_weights = '../resnet50_fbaug.pth'
 
     # ----------data config---------- #
-    image_mean = np.array([103.530, 116.280, 123.675])
-    image_std = np.array([57.375, 57.120, 58.395])
+    image_mean = np.array([0.485, 0.456, 0.406])
+    image_std = np.array([0.229, 0.224, 0.225])
     train_image_short_size = 800
     train_image_max_size = 1400
     eval_resize = True

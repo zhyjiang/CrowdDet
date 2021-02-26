@@ -29,7 +29,7 @@ class Image(object):
             if self.eval_mode == 0:
                 self.gtboxes = body_bbox
                 self._ignNum = (body_bbox[:, -1] == -1).sum()
-            elif self.eval_mode == 1:hbox
+            elif self.eval_mode == 1:
                 self.gtboxes = head_bbox
                 self._ignNum = (head_bbox[:, -1] == -1).sum()
             elif self.eval_mode == 2:

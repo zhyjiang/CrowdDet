@@ -34,6 +34,7 @@ class CrowdHuman(torch.utils.data.Dataset):
         # image
         image_path = os.path.join(self.config.image_folder, record['ID']+'.jpg')
         image = misc_utils.load_img(image_path)
+        image = image / 255
         image_h = image.shape[0]
         image_w = image.shape[1]
         if if_flap:
